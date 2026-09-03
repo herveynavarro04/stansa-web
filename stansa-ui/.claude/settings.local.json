@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/herveynavarro/Desktop/**)",
+      "Bash(mkdir -p /Users/herveynavarro/stansa-web/stansa-ui/data)",
+      "Bash(cp /Users/herveynavarro/tables/*.xlsx /Users/herveynavarro/stansa-web/stansa-ui/data/)",
+      "Bash(cp /Users/herveynavarro/Desktop/stansa_logo.jpeg /Users/herveynavarro/stansa-web/stansa-ui/public/logo.jpeg)",
+      "Bash(npm install *)",
+      "Bash(rm -rf /Users/herveynavarro/stansa-web/stansa-ui/src/pages /Users/herveynavarro/stansa-web/stansa-ui/src/styles)",
+      "Bash(mkdir -p /Users/herveynavarro/stansa-web/stansa-ui/src/app/api/products/'[slug]' /Users/herveynavarro/stansa-web/stansa-ui/src/components /Users/herveynavarro/stansa-web/stansa-ui/src/lib)",
+      "Bash(npm run *)",
+      "Bash(node *)",
+      "Bash(curl -sf -o /dev/null http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"Home: %{http_code} \\(%{size_download} bytes\\)\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"API PTR: %{http_code}\\\\n\" 'http://localhost:3000/api/products/ptr')",
+      "Bash(curl -s 'http://localhost:3000/api/products/ptr')",
+      "Bash(curl -s -o /dev/null -w \"API lámina_caliente: %{http_code}\\\\n\" 'http://localhost:3000/api/products/l%C3%A1mina_caliente')",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"next dev\")"
+    ]
+  }
+}

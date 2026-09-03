@@ -1,0 +1,174 @@
+@import 'tailwindcss';
+
+/* Aceros Stansa — copper / bronze design tokens */
+:root {
+  --bronze-950: #2a1408;
+  --bronze-900: #3d1e0e;
+  --bronze-800: #5c2e14;
+  --bronze-700: #7a3d1c;
+  --copper-600: #b87333;
+  --copper-500: #c88a4d;
+  --copper-400: #d4823c;
+  --copper-300: #e4a678;
+  --copper-100: #f2dcc4;
+  --copper-50: #faf1e6;
+
+  --ink: #1a1512;
+  --ink-soft: #3a3330;
+  --iron: #6b6660;
+  --iron-soft: #9a938c;
+  --hairline: #e6e2dc;
+  --hairline-strong: #d4cec6;
+  --surface: #ffffff;
+  --surface-warm: #f5f3ef;
+  --surface-warm-2: #eeebe4;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
+
+  --color-bronze-950: var(--bronze-950);
+  --color-bronze-900: var(--bronze-900);
+  --color-bronze-800: var(--bronze-800);
+  --color-bronze-700: var(--bronze-700);
+  --color-copper-600: var(--copper-600);
+  --color-copper-500: var(--copper-500);
+  --color-copper-400: var(--copper-400);
+  --color-copper-300: var(--copper-300);
+  --color-copper-100: var(--copper-100);
+  --color-copper-50: var(--copper-50);
+
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-iron: var(--iron);
+  --color-iron-soft: var(--iron-soft);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-surface: var(--surface);
+  --color-surface-warm: var(--surface-warm);
+  --color-surface-warm-2: var(--surface-warm-2);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01', 'cv11';
+  overscroll-behavior-y: none;
+}
+
+/* iOS safe-area helpers (notch / Dynamic Island / home indicator) */
+.pt-safe { padding-top: env(safe-area-inset-top); }
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+.pl-safe { padding-left: env(safe-area-inset-left); }
+.pr-safe { padding-right: env(safe-area-inset-right); }
+
+::selection {
+  background: var(--copper-600);
+  color: #fff;
+}
+
+/* Serif display face — used for headings only */
+.font-display {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-variation-settings: 'SOFT' 30, 'WONK' 0;
+  letter-spacing: -0.015em;
+}
+
+/* Metallic surface primitive — used behind product cards */
+.metal-surface {
+  background:
+    radial-gradient(120% 80% at 15% 15%, rgba(228, 166, 120, 0.18), transparent 55%),
+    radial-gradient(120% 100% at 85% 90%, rgba(92, 46, 20, 0.14), transparent 60%),
+    linear-gradient(160deg, #f7f4ef 0%, #ece6dd 55%, #d9d0c3 100%);
+}
+.metal-surface--warm {
+  background:
+    radial-gradient(120% 80% at 20% 10%, rgba(212, 130, 60, 0.28), transparent 55%),
+    radial-gradient(140% 100% at 90% 95%, rgba(92, 46, 20, 0.22), transparent 60%),
+    linear-gradient(160deg, #f6e9d8 0%, #e6cba7 55%, #b47a48 100%);
+}
+.metal-surface--dark {
+  background:
+    radial-gradient(120% 80% at 15% 15%, rgba(228, 166, 120, 0.22), transparent 55%),
+    radial-gradient(140% 100% at 90% 95%, rgba(0, 0, 0, 0.35), transparent 60%),
+    linear-gradient(160deg, #3d2416 0%, #1e100a 100%);
+}
+
+/* Focus ring — copper, always visible for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--copper-600);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Accordion transition */
+.accordion-panel {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.accordion-panel[data-open='true'] {
+  grid-template-rows: 1fr;
+}
+.accordion-panel > div {
+  min-height: 0;
+}
+
+/* Hairline table styling — used inside product detail */
+.dim-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.dim-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  color: var(--bronze-800);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--hairline-strong);
+  white-space: nowrap;
+}
+.dim-table tbody td {
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--hairline);
+  white-space: nowrap;
+}
+.dim-table tbody tr:nth-child(even) td {
+  background: var(--surface-warm);
+}
+.dim-table tbody tr:hover td {
+  background: var(--copper-50);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .accordion-panel { transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
