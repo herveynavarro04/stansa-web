@@ -1,11 +1,13 @@
-import { MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
+import { MapPin, Mail, Clock, ArrowUpRight } from 'lucide-react';
+import { WhatsAppIcon } from './brand-icons';
+import { WHATSAPP_NUMBER, WHATSAPP_HREF } from '@/lib/channels';
 
 const CONTACT_ITEMS = [
   {
-    icon: Phone,
-    eyebrow: 'Teléfono',
-    value: ' +52 81 1254 7695',
-    href: 'tel:+528112547695',
+    icon: WhatsAppIcon,
+    eyebrow: 'WhatsApp',
+    value: WHATSAPP_NUMBER,
+    href: WHATSAPP_HREF,
     hint: 'Lun a Vie · 8:00 – 18:00',
   },
   {

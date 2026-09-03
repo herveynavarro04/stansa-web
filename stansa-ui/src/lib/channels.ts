@@ -5,13 +5,24 @@ import {
   XIcon,
   LinkedInIcon,
   GlobeGlyph,
+  WhatsAppIcon,
 } from '@/components/brand-icons';
+
+/** Business WhatsApp number (used in ContactSection, footer, and modal). */
+export const WHATSAPP_NUMBER = '+52 81 1254 7695';
+export const WHATSAPP_HREF =
+  'https://wa.me/528112547695?text=' +
+  encodeURIComponent('Hola, me gustaría solicitar una cotización.');
 
 export type Channel = {
   name: string;
   handle: string;
   href: string;
-  icon: React.ComponentType<{ className?: string; 'aria-hidden'?: boolean }>;
+  icon: React.ComponentType<{
+    className?: string;
+    'aria-hidden'?: boolean;
+    strokeWidth?: number;
+  }>;
 };
 
 /** The current website — used by the announcement modal, not the footer. */
@@ -24,6 +35,12 @@ export const WEBSITE_CHANNEL: Channel = {
 
 /** Social channels — used by both the modal and the footer. */
 export const SOCIAL_CHANNELS: Channel[] = [
+  {
+    name: 'WhatsApp',
+    handle: WHATSAPP_NUMBER,
+    href: WHATSAPP_HREF,
+    icon: WhatsAppIcon,
+  },
   {
     name: 'Instagram',
     handle: '@aceros.stansa',
