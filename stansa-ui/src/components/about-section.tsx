@@ -11,7 +11,7 @@ export function AboutSection() {
             Sobre nosotros
           </p>
           <h2 className="mt-4 font-display text-4xl leading-[1.05] text-bronze-900 md:text-6xl">
-            Tres años entregando
+            Más de 20 años entregando
             <span className="italic text-copper-600"> acero </span>
             que responde.
           </h2>
