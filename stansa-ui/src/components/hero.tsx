@@ -83,11 +83,11 @@ export function Hero() {
         <dl className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-hairline px-5 py-5 text-center md:px-10">
           <div className="px-2">
             <dt className="text-[0.68rem] tracking-[0.18em] text-iron uppercase">Experiencia</dt>
-            <dd className="mt-1 font-display text-lg text-bronze-800 md:text-xl">3 años</dd>
+            <dd className="mt-1 font-display text-lg text-bronze-800 md:text-xl">+20 años</dd>
           </div>
           <div className="px-2">
             <dt className="text-[0.68rem] tracking-[0.18em] text-iron uppercase">Catálogo</dt>
-            <dd className="mt-1 font-display text-lg text-bronze-800 md:text-xl">25 productos</dd>
+            <dd className="mt-1 font-display text-lg text-bronze-800 md:text-xl">+30 productos</dd>
           </div>
           <div className="px-2">
             <dt className="text-[0.68rem] tracking-[0.18em] text-iron uppercase">Origen</dt>

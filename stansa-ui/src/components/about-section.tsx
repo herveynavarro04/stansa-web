@@ -49,8 +49,8 @@ export function AboutSection() {
 
         <div className="mt-16 max-w-3xl border-t border-hairline-strong pt-10 md:mt-20 md:pt-12">
           <p className="font-display text-2xl leading-snug text-bronze-900 md:text-3xl">
-            &ldquo;En tres años pasamos de una bodega a un catálogo con 25
-            líneas. Lo hicimos surtiendo lo prometido, en el calibre prometido,
+            &ldquo;Con 20 años de experiencia, contamos con un catálogo de más de 30
+            líneas. Surtimos lo prometido, en el calibre prometido,
             en la fecha prometida.&rdquo;
           </p>
           <p className="mt-4 text-sm text-iron">Dirección · Aceros Stansa</p>
