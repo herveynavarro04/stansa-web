@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${product.name} — Aceros Stansa`,
     description: `Medidas, calibres y pesos disponibles de ${product.name}. ${product.tagline}`,
+    alternates: {
+      canonical: `/productos/${encodeURIComponent(product.slug)}`,
+    },
   };
 }
 

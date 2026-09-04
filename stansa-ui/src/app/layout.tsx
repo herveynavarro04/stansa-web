@@ -20,7 +20,10 @@ export const metadata: Metadata = {
   title: 'Aceros Stansa — Acero estructural en Monterrey',
   description:
     'Distribución de acero estructural con la precisión y confianza que exige tu obra. Láminas, placas, perfiles, tubos y soleras en Monterrey, Nuevo León.',
-  metadataBase: new URL('https://acerosstansa.com'),
+  metadataBase: new URL('https://www.acerosstansa.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Aceros Stansa',
     description: 'Acero estructural en Monterrey, Nuevo León.',
