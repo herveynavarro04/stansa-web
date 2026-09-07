@@ -64,7 +64,7 @@ export function AnnouncementModal() {
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center overflow-y-auto bg-ink/55 p-4 backdrop-blur-sm md:p-8"
+      className="fixed inset-0 z-[70] overflow-y-auto bg-ink/55 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="stansa-notice-title"
@@ -72,7 +72,17 @@ export function AnnouncementModal() {
         if (e.target === e.currentTarget) close();
       }}
     >
-      <div className="relative w-full max-w-lg border border-hairline-strong bg-surface shadow-[0_30px_80px_-20px_rgba(26,21,18,0.45)]">
+      <div
+        className="flex min-h-full items-center justify-center p-4 md:p-8"
+        style={{
+          paddingTop: 'max(1rem, env(safe-area-inset-top))',
+          paddingBottom: 'max(1rem, env(safe-area-inset-bottom))',
+        }}
+        onMouseDown={(e) => {
+          if (e.target === e.currentTarget) close();
+        }}
+      >
+        <div className="relative w-full max-w-lg border border-hairline-strong bg-surface shadow-[0_30px_80px_-20px_rgba(26,21,18,0.45)]">
         <button
           type="button"
           onClick={close}
@@ -147,6 +157,7 @@ export function AnnouncementModal() {
           >
             Entendido
           </button>
+        </div>
         </div>
       </div>
     </div>

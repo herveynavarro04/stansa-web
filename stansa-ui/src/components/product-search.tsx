@@ -74,10 +74,8 @@ export function ProductSearch({
     return () => window.removeEventListener('keydown', onKey);
   }, [enabled, toggleSearch, closeSearch]);
 
-  // When open: autofocus the input (without triggering a scroll), and close
-  // on user-initiated scroll or clicks outside. We deliberately listen for
-  // `wheel` and `touchmove` — not `scroll` — so that programmatic scrolls
-  // (anchor navigation, focus-into-view) don't spuriously close the drawer.
+  // When open: autofocus the input (without triggering a scroll) and close
+  // on clicks outside the drawer.
   useEffect(() => {
     if (!displayOpen) return;
 
@@ -93,14 +91,10 @@ export function ProductSearch({
     };
 
     window.addEventListener('pointerdown', dismissIfOutside);
-    window.addEventListener('wheel', dismissIfOutside, { passive: true });
-    window.addEventListener('touchmove', dismissIfOutside, { passive: true });
 
     return () => {
       clearTimeout(t);
       window.removeEventListener('pointerdown', dismissIfOutside);
-      window.removeEventListener('wheel', dismissIfOutside);
-      window.removeEventListener('touchmove', dismissIfOutside);
     };
   }, [displayOpen]);
 
@@ -207,7 +201,7 @@ export function ProductSearch({
                   ? `search-item-${results[safeActive].slug}`
                   : undefined
               }
-              className="w-full bg-transparent py-4 text-base text-ink placeholder:text-iron-soft focus:outline-none md:text-lg"
+              className="w-full bg-transparent py-4 text-base text-ink placeholder:text-iron-soft focus:outline-none focus-visible:outline-none md:text-lg"
             />
             <button
               type="button"

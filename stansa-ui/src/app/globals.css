@@ -107,11 +107,18 @@ body {
     linear-gradient(160deg, #3d2416 0%, #1e100a 100%);
 }
 
-/* Focus ring — copper, always visible for keyboard users */
+/* Focus ring — copper, always visible for keyboard users.
+   Text inputs/textareas are excluded; they communicate focus through
+   their surrounding container (e.g. bottom border color change). */
 :focus-visible {
   outline: 2px solid var(--copper-600);
   outline-offset: 3px;
   border-radius: 2px;
+}
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  outline-offset: 0;
 }
 
 /* Accordion transition */

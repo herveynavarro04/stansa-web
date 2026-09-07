@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { ProductSearch } from './product-search';
 
@@ -12,9 +13,17 @@ const NAV_LINKS = [
 ];
 
 export function SiteNav() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+
+  const onBrandClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,8 +40,13 @@ export function SiteNav() {
           : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <div className="pl-safe pr-safe mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 md:h-20 md:px-10">
-        <Link href="/" className="flex items-center gap-3" aria-label="Aceros Stansa — Inicio">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 md:h-20 md:px-10">
+        <Link
+          href="/"
+          onClick={onBrandClick}
+          className="flex items-center gap-3"
+          aria-label="Aceros Stansa — Inicio"
+        >
           <span className="relative block h-9 w-9 md:h-10 md:w-10">
             <Image
               src="/logo.png"
